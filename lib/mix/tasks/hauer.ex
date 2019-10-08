@@ -3,9 +3,10 @@ defmodule Mix.Tasks.Hauer do
 
   @impl Mix.Task
   @shortdoc "Scaffold a new route"
-  def run args do
-    IO.puts "Hauer command line 1.0"
-    Mix.shell().info(Enum.join(args, ", ")) #todo remove, debug purpose only
+  def run(args) do
+    IO.puts("Hauer command line 1.0")
+    # todo remove, debug purpose only
+    Mix.shell().info(Enum.join(args, ", "))
 
     verb = args |> Enum.at(0)
     resource_name = args |> Enum.at(1)
@@ -50,8 +51,7 @@ defmodule Mix.Tasks.Hauer do
   Update the project configuration according to resource name
   """
   def update_config(resource_name) do
-    IO.inspect(resource_name)
-    # {:ok, pwd} = File.cwd()
+    {:ok, pwd} = File.cwd()
     conf = Hauer.Configuration.read()
     IO.inspect(conf)
   end
