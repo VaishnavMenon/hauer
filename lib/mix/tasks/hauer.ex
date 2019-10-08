@@ -3,10 +3,9 @@ defmodule Mix.Tasks.Hauer do
 
   @impl Mix.Task
   @shortdoc "Scaffold a new route"
-  def run(args) do
-    IO.puts("Hauer command line 1.0")
-    # todo remove, debug purpose only
-    Mix.shell().info(Enum.join(args, ", "))
+  def run args do
+    IO.puts "Hauer command line 1.0"
+    Mix.shell().info(Enum.join(args, ", ")) #todo remove, debug purpose only
 
     verb = args |> Enum.at(0)
     resource_name = args |> Enum.at(1)
